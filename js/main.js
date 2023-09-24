@@ -30,7 +30,6 @@ rightSidebarBtns.forEach((element, idx) => {
   })
 })
 
-
 // input click
 const upload = document.querySelectorAll('.upload');
 const inputFile = document.querySelectorAll('.input-file');
@@ -39,3 +38,12 @@ inputFile.forEach((element, idx) => {
     upload[idx].classList.toggle('actives');
   })
 })
+
+
+
+
+
+
+
+
+
