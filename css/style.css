@@ -181,8 +181,17 @@ a {
   border: 0.957px solid #064570;
 }
 
+.commons-input.green-btn:hover {
+  border: 0.287px solid #00875A;
+  cursor: auto;
+}
+
 .commons-input:hover legend {
   color: #064570;
+}
+
+.commons-input.green-btn:hover legend {
+  color: #8F92A1;
 }
 
 .commons-input input::placeholder {
@@ -237,13 +246,9 @@ a {
   letter-spacing: -0.2px;
 }
 
-.commons-btn-154.active,
-.commons-btn-154:hover {
+.active-154{
   background: #064570;
-
-  color: var(--white-w-100, #FFF);
-  font-style: normal;
-  font-weight: 700;
+  color: white;
 }
 
 .commons-btn-blue {
@@ -278,7 +283,7 @@ a {
   min-width: 95px;
 }
 
-.upload{
+.upload {
   background: #F0F0F0;
   color: #9A9A9A;
   text-align: center;
@@ -325,6 +330,7 @@ a {
   max-width: 209px;
   width: 100%;
 }
+
 .mw-229 {
   max-width: 209px;
   width: 100%;
@@ -338,7 +344,14 @@ a {
   padding: 18px 0;
   background: var(--white-w-100, #FFF);
   box-shadow: 0px 1px 10px rgb(242, 239, 239);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background: #FFF;
 }
+
 
 .header .container {
   display: flex;
@@ -401,6 +414,14 @@ a {
 .main-sec .glavni-sec {
   width: 100%;
   padding: 52px 50px 56px 42px;
+  position: relative;
+  top: 100px;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.main-sec .glavni-sec::-webkit-scrollbar {
+  display: none;
 }
 
 .glavni-sec .title {
@@ -483,6 +504,29 @@ a {
   width: 100%;
 }
 
+.d-none {
+  display: none !important;
+}
+
+.d-blog {
+  display: flex;
+}
+
+.show {
+  display: block!important;
+}
+
+.hide {
+  display: none;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+.active-154 {}
+
 /* etap-wrap */
 .etap-wrap {
   padding: 21px 26px 43px;
@@ -551,6 +595,9 @@ a {
   padding: 28px 14px 28px 0;
   border-right: 1px solid rgba(225, 224, 224, 0.422);
   margin-left: 5px;
+  position: relative;
+  margin-top: 100px;
+  left: 0;
 }
 
 .left-item {
@@ -743,16 +790,37 @@ a {
 /* LEFT SIDEBAR END */
 
 
+
 /* CONTENT-WRAP START*/
 .content-wrap {
   min-width: 800px;
   max-width: 990px;
   width: 100%;
+  position: relative;
+  top: 100px;
 }
 
 .content {
   padding: 0 40px;
+  overflow-y: auto;
+  height: 100vh;
 }
+
+.content+div {
+  overflow-y: scroll;
+}
+
+.content::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge add Firefox */
+.content {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  /* Firefox */
+}
+
 
 /* kontent */
 .content-head {
@@ -761,7 +829,6 @@ a {
   justify-content: space-around;
   flex-wrap: wrap;
   padding: 0 19px;
-
 }
 
 .content-head-item {
@@ -803,15 +870,16 @@ a {
   letter-spacing: -0.387px;
 }
 
-.content-head-item:hover {
+.content-head-item.active{
   border-bottom: #064570 solid 4px;
 }
 
-.content-head-item:hover>p svg ellipse:last-child {
+
+.content-head-item.active p svg ellipse:last-child{
   stroke: #064570;
 }
 
-.content-head-item:hover>p svg ellipse:first-child {
+.content-head-item.active p svg ellipse:first-child {
   fill: #064570;
 }
 
@@ -903,6 +971,8 @@ a {
   width: 100%;
   padding: 61px 30px;
   height: 1115px;
+  position: relative;
+  top: 100px;
 }
 
 .cabinitet-title {
@@ -1020,6 +1090,10 @@ table,
 }
 
 /* table-obligations */
+table input{
+  width: 100%;
+  display: inline-block;
+}
 .table-obligations {
   margin-bottom: 30px;
 }
